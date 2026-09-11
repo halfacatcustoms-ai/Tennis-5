@@ -1,0 +1,1275 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #f3eee4;
+    color: #102d22;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.site-header {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 26px 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: white;
+
+    mix-blend-mode: normal;
+}
+
+.logo {
+    font-family: "DM Sans", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    line-height: 1;
+}
+
+.logo span {
+    display: block;
+    margin-top: 5px;
+
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.main-nav a {
+    transition: opacity 0.25s ease;
+}
+
+.main-nav a:hover {
+    opacity: 0.65;
+}
+
+.nav-button {
+    padding: 11px 17px;
+
+    border: 1px solid rgba(255,255,255,0.65);
+    border-radius: 100px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    height: 100vh;
+    min-height: 720px;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(18, 82, 47, 0.15),
+            rgba(5, 42, 24, 0.38)
+        ),
+        #28633d;
+}
+
+
+/* Grass texture */
+
+.grass-texture {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.42;
+
+    background-image:
+        repeating-linear-gradient(
+            92deg,
+            rgba(255,255,255,0.035) 0px,
+            rgba(255,255,255,0.035) 1px,
+            transparent 1px,
+            transparent 4px
+        ),
+        repeating-linear-gradient(
+            5deg,
+            rgba(0,0,0,0.035) 0px,
+            rgba(0,0,0,0.035) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+
+    pointer-events: none;
+}
+
+
+/* Hero text */
+
+.hero-content {
+    position: absolute;
+    z-index: 20;
+
+    left: 7vw;
+    top: 23vh;
+
+    max-width: 720px;
+}
+
+.eyebrow,
+.section-kicker {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin-top: 24px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(80px, 11vw, 170px);
+    font-weight: 500;
+    line-height: 0.77;
+    letter-spacing: -0.055em;
+}
+
+.hero h1 em,
+h2 em {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hero-description {
+    max-width: 350px;
+
+    margin-top: 42px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.82);
+}
+
+.hero-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-top: 32px;
+
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.65);
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.hero-link span {
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   HERO COURT
+========================================================= */
+
+.hero-court {
+    position: absolute;
+
+    left: 3%;
+    right: 3%;
+    bottom: -23%;
+
+    height: 67%;
+
+    perspective: 900px;
+
+    pointer-events: none;
+}
+
+
+/* Court lines */
+
+.court-lines {
+    position: absolute;
+    inset: 0;
+
+    transform:
+        rotateX(57deg)
+        rotateZ(0deg)
+        scale(1.08);
+
+    transform-origin: center bottom;
+}
+
+.court-outer {
+    position: absolute;
+    inset: 2% 8% 2% 8%;
+
+    border: 3px solid rgba(255,255,255,0.88);
+}
+
+.court-service-left,
+.court-service-right {
+    position: absolute;
+
+    top: 2%;
+    bottom: 2%;
+
+    width: 1px;
+
+    background: rgba(255,255,255,0.82);
+}
+
+.court-service-left {
+    left: 31%;
+}
+
+.court-service-right {
+    right: 31%;
+}
+
+.court-centre-line {
+    position: absolute;
+
+    left: 50%;
+    top: 2%;
+    bottom: 2%;
+
+    width: 2px;
+
+    background: rgba(255,255,255,0.82);
+}
+
+.court-singles-left,
+.court-singles-right {
+    position: absolute;
+
+    top: 2%;
+    bottom: 2%;
+
+    width: 1px;
+
+    background: rgba(255,255,255,0.8);
+}
+
+.court-singles-left {
+    left: 22%;
+}
+
+.court-singles-right {
+    right: 22%;
+}
+
+
+/* =========================================================
+   NET
+========================================================= */
+
+.court-net {
+    position: absolute;
+
+    z-index: 10;
+
+    left: 7%;
+    right: 7%;
+    top: 39%;
+
+    height: 72px;
+}
+
+.net-post {
+    position: absolute;
+
+    top: -14px;
+
+    width: 7px;
+    height: 94px;
+
+    background: rgba(245,245,238,0.9);
+}
+
+.net-post.left {
+    left: 0;
+}
+
+.net-post.right {
+    right: 0;
+}
+
+.net-mesh {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 0;
+
+    height: 68px;
+
+    border-top: 2px solid rgba(255,255,255,0.9);
+
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,0.15) 0,
+            rgba(255,255,255,0.15) 1px,
+            transparent 1px,
+            transparent 7px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.13) 0,
+            rgba(255,255,255,0.13) 1px,
+            transparent 1px,
+            transparent 7px
+        );
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   BALL
+========================================================= */
+
+#ball-field {
+    position: absolute;
+    inset: 0;
+
+    z-index: 30;
+
+    pointer-events: none;
+}
+
+#tennis-ball {
+    position: absolute;
+
+    width: 17px;
+    height: 17px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 32% 27%,
+            rgba(255,255,255,0.85) 0 6%,
+            transparent 7%
+        ),
+        #d8e74e;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.22),
+        0 0 10px rgba(220,235,80,0.25);
+
+    will-change: transform, opacity;
+
+    transform: translate3d(0,0,0);
+}
+
+
+/* =========================================================
+   HERO SCROLL
+========================================================= */
+
+.hero-scroll {
+    position: absolute;
+
+    z-index: 20;
+
+    bottom: 28px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   SHARED SECTIONS
+========================================================= */
+
+.section-light {
+    position: relative;
+
+    background: #f3eee4;
+    color: #143428;
+}
+
+.section-number {
+    position: absolute;
+
+    top: 70px;
+    left: 5vw;
+
+    font-size: 10px;
+    letter-spacing: 0.18em;
+
+    opacity: 0.45;
+}
+
+.section-kicker {
+    color: #7b8b78;
+}
+
+.section-kicker.light {
+    color: rgba(255,255,255,0.6);
+}
+
+h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(65px, 8vw, 125px);
+    font-weight: 500;
+    line-height: 0.82;
+    letter-spacing: -0.05em;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro {
+    padding: 170px 7vw 120px;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.75fr;
+    gap: 10vw;
+
+    max-width: 1250px;
+    margin: auto;
+}
+
+.intro-copy {
+    padding-top: 45px;
+
+    max-width: 510px;
+}
+
+.large-copy {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 31px;
+    line-height: 1.1;
+
+    margin-bottom: 28px;
+}
+
+.intro-copy > p:not(.large-copy) {
+    max-width: 430px;
+
+    font-size: 13px;
+    line-height: 1.8;
+
+    color: #637168;
+}
+
+.text-link {
+    display: inline-block;
+
+    margin-top: 34px;
+    padding-bottom: 8px;
+
+    border-bottom: 1px solid #143428;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+
+/* Stats */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    max-width: 1250px;
+    margin: 120px auto 0;
+
+    border-top: 1px solid rgba(20,52,40,0.18);
+}
+
+.stat {
+    padding: 30px 20px 0 0;
+}
+
+.stat + .stat {
+    padding-left: 25px;
+
+    border-left: 1px solid rgba(20,52,40,0.18);
+}
+
+.stat strong {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 58px;
+    font-weight: 500;
+}
+
+.stat span {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: #7b8b78;
+}
+
+
+/* =========================================================
+   COURTS
+========================================================= */
+
+.courts-section {
+    position: relative;
+
+    padding: 150px 7vw 130px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            180deg,
+            #163d2d 0%,
+            #17432f 100%
+        );
+}
+
+.courts-heading {
+    max-width: 1250px;
+
+    margin: 0 auto 75px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.courts-heading > p {
+    max-width: 300px;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.65);
+}
+
+.court-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    max-width: 1250px;
+    margin: auto;
+}
+
+.court-card {
+    position: relative;
+
+    min-height: 500px;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    transition:
+        transform 0.45s cubic-bezier(.2,.8,.2,1),
+        filter 0.45s ease;
+}
+
+.court-card:hover {
+    transform: translateY(-10px);
+    filter: brightness(1.06);
+}
+
+.grass-card {
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 0,
+            rgba(255,255,255,0.025) 2px,
+            transparent 2px,
+            transparent 8px
+        ),
+        #316c43;
+}
+
+.clay-card {
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,0.035) 0,
+            rgba(255,255,255,0.035) 2px,
+            transparent 2px,
+            transparent 8px
+        ),
+        #b65d3c;
+}
+
+.hard-card {
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(255,255,255,0.025) 0,
+            rgba(255,255,255,0.025) 2px,
+            transparent 2px,
+            transparent 8px
+        ),
+        #3d6f92;
+}
+
+.court-card-number {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    opacity: 0.7;
+}
+
+.court-card-content p {
+    margin-bottom: 8px;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.court-card h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 78px;
+    font-weight: 500;
+    line-height: 0.8;
+}
+
+.court-card-content span {
+    display: block;
+
+    margin-top: 20px;
+
+    font-size: 10px;
+    letter-spacing: 0.08em;
+
+    opacity: 0.75;
+}
+
+.card-arrow {
+    position: absolute;
+
+    right: 28px;
+    bottom: 26px;
+
+    font-size: 28px;
+    font-weight: 300;
+}
+
+
+/* =========================================================
+   MARQUEE
+========================================================= */
+
+.marquee {
+    overflow: hidden;
+
+    background: #e5dfd1;
+
+    color: #173c2c;
+
+    padding: 25px 0;
+}
+
+.marquee-track {
+    width: max-content;
+
+    display: flex;
+    align-items: center;
+    gap: 35px;
+
+    animation: marqueeMove 30s linear infinite;
+}
+
+.marquee span {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 48px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+.marquee i {
+    font-style: normal;
+    font-size: 16px;
+}
+
+@keyframes marqueeMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   MEMBERSHIP
+========================================================= */
+
+.membership {
+    padding: 160px 7vw;
+
+    overflow: hidden;
+}
+
+.membership-grid {
+    max-width: 1250px;
+
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    gap: 10vw;
+}
+
+.membership-intro {
+    max-width: 400px;
+
+    margin-top: 42px;
+
+    font-size: 13px;
+    line-height: 1.8;
+
+    color: #68766e;
+}
+
+.membership-list {
+    border-top: 1px solid rgba(20,52,40,0.2);
+}
+
+.membership-item {
+    display: grid;
+    grid-template-columns: 55px 1fr 40px;
+    align-items: center;
+
+    padding: 28px 0;
+
+    border-bottom: 1px solid rgba(20,52,40,0.2);
+
+    transition: padding 0.3s ease;
+}
+
+.membership-item:hover {
+    padding-left: 12px;
+}
+
+.membership-number {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    color: #7b8b78;
+}
+
+.membership-item h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 31px;
+    font-weight: 500;
+}
+
+.membership-item p {
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    color: #77837c;
+}
+
+.membership-arrow {
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   EVENTS
+========================================================= */
+
+.events-section {
+    position: relative;
+
+    padding: 150px 7vw 160px;
+
+    color: white;
+
+    background: #102f24;
+}
+
+.light-number {
+    color: white;
+}
+
+.events-top {
+    max-width: 1250px;
+
+    margin: auto auto 75px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.events-description {
+    max-width: 320px;
+
+    font-size: 13px;
+    line-height: 1.7;
+
+    color: rgba(255,255,255,0.62);
+}
+
+
+/* Event list */
+
+.event-list {
+    max-width: 1250px;
+
+    margin: auto;
+}
+
+.event-card {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 35px;
+    align-items: center;
+
+    padding: 30px 0;
+
+    border-top: 1px solid rgba(255,255,255,0.17);
+
+    transition: padding 0.3s ease;
+}
+
+.event-card:last-child {
+    border-bottom: 1px solid rgba(255,255,255,0.17);
+}
+
+.event-card:hover {
+    padding-left: 12px;
+}
+
+.event-date {
+    text-transform: uppercase;
+}
+
+.event-date-day {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 54px;
+    line-height: 0.8;
+}
+
+.event-date-month {
+    display: block;
+
+    margin-top: 7px;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+}
+
+.event-info h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.event-info p {
+    margin-top: 7px;
+
+    font-size: 10px;
+
+    color: rgba(255,255,255,0.55);
+}
+
+.event-arrow {
+    font-size: 23px;
+}
+
+.events-loading {
+    padding: 35px 0;
+
+    border-top: 1px solid rgba(255,255,255,0.17);
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+
+    color: rgba(255,255,255,0.65);
+}
+
+.events-error {
+    padding: 35px 0;
+
+    font-size: 12px;
+
+    color: rgba(255,255,255,0.55);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+    padding: 160px 7vw;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 70% 20%,
+            rgba(82,140,91,0.25),
+            transparent 40%
+        ),
+        #235a39;
+}
+
+.contact-inner {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.contact-section h2 {
+    margin-top: 28px;
+}
+
+.contact-section p:not(.section-kicker) {
+    max-width: 350px;
+
+    margin-top: 35px;
+
+    font-size: 13px;
+    line-height: 1.8;
+
+    color: rgba(255,255,255,0.7);
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 30px;
+
+    margin-top: 35px;
+    padding: 15px 20px;
+
+    border: 1px solid rgba(255,255,255,0.6);
+    border-radius: 100px;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.contact-button:hover {
+    background: white;
+    color: #235a39;
+}
+
+.contact-button span {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.site-footer {
+    padding: 35px 42px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+
+    background: #102d22;
+
+    color: rgba(255,255,255,0.65);
+}
+
+.footer-logo {
+    color: white;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+}
+
+.footer-logo span {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 7px;
+    letter-spacing: 0.28em;
+}
+
+.footer-info {
+    text-align: center;
+
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.footer-copy {
+    text-align: right;
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .site-header {
+        padding: 22px 24px;
+    }
+
+    .main-nav {
+        gap: 15px;
+    }
+
+    .main-nav a:not(.nav-button) {
+        display: none;
+    }
+
+    .hero-content {
+        left: 7vw;
+        right: 7vw;
+        top: 20vh;
+    }
+
+    .hero h1 {
+        font-size: clamp(75px, 18vw, 130px);
+    }
+
+    .hero-court {
+        left: -18%;
+        right: -18%;
+        bottom: -18%;
+        height: 58%;
+    }
+
+    .intro-grid,
+    .membership-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .intro-copy {
+        padding-top: 0;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 0;
+    }
+
+    .stat:nth-child(3) {
+        border-left: 0;
+        padding-left: 0;
+    }
+
+    .court-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .court-card {
+        min-height: 380px;
+    }
+
+    .courts-heading,
+    .events-top {
+        display: block;
+    }
+
+    .courts-heading > p,
+    .events-description {
+        margin-top: 35px;
+    }
+
+    .event-card {
+        grid-template-columns: 80px 1fr auto;
+        gap: 20px;
+    }
+
+    .event-date-day {
+        font-size: 42px;
+    }
+
+    .event-info h3 {
+        font-size: 28px;
+    }
+
+    .site-footer {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+    .footer-info,
+    .footer-copy {
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero-description {
+        max-width: 300px;
+    }
+
+    .hero-court {
+        bottom: -10%;
+        height: 52%;
+
+        left: -35%;
+        right: -35%;
+    }
+
+    .court-net {
+        top: 39%;
+    }
+
+    .intro,
+    .courts-section,
+    .membership,
+    .events-section,
+    .contact-section {
+        padding-top: 110px;
+        padding-bottom: 100px;
+    }
+
+    h2 {
+        font-size: 67px;
+    }
+
+    .large-copy {
+        font-size: 27px;
+    }
+
+    .stats {
+        margin-top: 80px;
+    }
+
+    .court-card h3 {
+        font-size: 65px;
+    }
+
+    .event-card {
+        grid-template-columns: 65px 1fr;
+    }
+
+    .event-arrow {
+        display: none;
+    }
+
+    .event-date-day {
+        font-size: 37px;
+    }
+
+    .event-info h3 {
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .marquee-track {
+        animation: none;
+    }
+
+    .court-card,
+    .membership-item,
+    .event-card {
+        transition: none;
+    }
+}
